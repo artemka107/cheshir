@@ -36,6 +36,7 @@ gulp.task("style", function() {
 
 gulp.task("minjs", function() {
   gulp.src("src/js/*.js")
+    .pipe(plumber())
     .pipe(gulp.dest("build/js/"))
     .pipe(uglify())
     .pipe(gulp.dest("build/js/minjs"));
